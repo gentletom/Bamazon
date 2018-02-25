@@ -36,4 +36,4 @@ Once the update goes through, show the customer the total cost of their purchase
 If this activity took you between 8-10 hours, then you've put enough time into this assignment. Feel free to stop here -- unless you want to take on the next challenge.
 
 
-Note: Screenshots are missing. I was having issues with mySQL Server on client side where I wanted to take my screen shots. Because of this I am not certain that the code is bug free. Will try to get this fixed asap.
+Note: Screenshots are added now and bugs are fixed. Confirmed working :) 
