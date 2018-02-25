@@ -6,7 +6,7 @@ var connection = mysql.createConnection({
 	host: "localhost",
 	port: 3306,
 	user: 'root',
-	password: 'root',
+	password: 'Diablo0o',
 	database: 'bamazon_db'
 });
 
@@ -38,20 +38,20 @@ inquirer
        .then(function(answer){
        	var chosenItem;
            	for (var i=0; i < res.length; i++){
-       		if(res[i].item_id === answer.choice){chosenItem = res[i];
+       		if(res[i].item_id == answer.choice){chosenItem = res[i];
        		}
        	}
 
-       	if(chosenItem.stock_quantity < parseInt(answer.number)){
+       	if(parseInt(chosenItem.stock_quantity) > parseInt(answer.number)){
        		console.log("Item(s) is/are available")
 
 //update the database
        connection.query("UPDATE products SET ? WHERE ?",[
        	{
-       		stock_quantity: number
+       		stock_quantity: chosenItem.stock_quantity - answer.number
        	},
        	{
-       		item_id: chosenItem
+       		item_id: chosenItem.item_id
        	}],
        	function(error){
        		if (error) throw err;
